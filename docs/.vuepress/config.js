@@ -1,7 +1,15 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: tianlu.tian
+ * @Date: 2020-05-28 11:01:35
+ * @LastEditors: tianlu.tian
+ * @LastEditTime: 2020-05-28 11:42:02
+ */ 
 module.exports = {
   port: 8083,
   title: 'TypeScript开发教程',
-  base: '/typescript/',
+  base: '/vuepress-typeScript/', // 注意此处要和git 仓库名一致，否则会样式路径错误
   description: '目录',
   head: [
     ['link', { rel: 'icon', href: '/images/typescript.png' }]
@@ -11,7 +19,7 @@ module.exports = {
     nav: [
       {
         text: 'GitHub',
-        link: 'https://github.com/dengwb1991/typescript-development-tutorial'
+        link: 'https://github.com/tiandashu/vuepress-typeScript.git'
       }
     ],
     // The sidebar
