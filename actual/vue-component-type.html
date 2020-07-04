@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue 组件与类型 | TypeScript开发教程</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/vuepress-typescript/images/typescript.png">
+    <meta name="description" content="目录">
+    <link rel="preload" href="/vuepress-typescript/assets/css/0.styles.6153b166.css" as="style"><link rel="preload" href="/vuepress-typescript/assets/js/app.bde0b7fd.js" as="script"><link rel="preload" href="/vuepress-typescript/assets/js/2.3f0df748.js" as="script"><link rel="preload" href="/vuepress-typescript/assets/js/11.a858ddc1.js" as="script"><link rel="prefetch" href="/vuepress-typescript/assets/js/10.ca189957.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/12.513071a6.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/13.b51a5d66.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/14.3bd84577.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/15.8b49ae34.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/16.c22832b8.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/17.3b456e5a.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/18.e670256e.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/19.2ca36dd0.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/20.82313649.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/21.558f10fa.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/22.0d2991a3.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/23.8a3267bb.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/24.44f8dc66.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/25.6f29ca8d.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/26.6206be3f.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/27.b14c1db8.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/28.d66aba6c.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/29.d8eeb7ee.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/3.9e4a2525.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/30.0a6a0f62.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/31.cf8eda74.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/32.f732ab6b.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/4.2e2c3fe2.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/5.8abf2eed.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/6.d4271ad8.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/7.884b888d.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/8.4f4d6c1f.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/9.a7329968.js">
+    <link rel="stylesheet" href="/vuepress-typescript/assets/css/0.styles.6153b166.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-typescript/" class="home-link router-link-active"><!----> <span class="site-name">TypeScript开发教程</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://github.com/tiandashu/vuepress-typeScript.git" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://github.com/tiandashu/vuepress-typeScript.git" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>初识篇</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-typescript/introduce/what-is-typescript.html" class="sidebar-link">什么是 TypeScript</a></li><li><a href="/vuepress-typescript/introduce/install-typescript.html" class="sidebar-link">安装 TypeScript</a></li><li><a href="/vuepress-typescript/introduce/hello-typescript.html" class="sidebar-link">Hello TypeScript</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>基础篇</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-typescript/basics/basis-data-types.html" class="sidebar-link">基础类型</a></li><li><a href="/vuepress-typescript/basics/interface.html" class="sidebar-link">接口</a></li><li><a href="/vuepress-typescript/basics/function.html" class="sidebar-link">函数</a></li><li><a href="/vuepress-typescript/basics/class.html" class="sidebar-link">类</a></li><li><a href="/vuepress-typescript/basics/class-and-interface.html" class="sidebar-link">类与接口</a></li><li><a href="/vuepress-typescript/basics/generics.html" class="sidebar-link">泛型</a></li><li><a href="/vuepress-typescript/basics/type-check-mechanism.html" class="sidebar-link">类型检查机制</a></li><li><a href="/vuepress-typescript/basics/advanced-type.html" class="sidebar-link">高级类型</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>工程篇</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-typescript/project/import-export.html" class="sidebar-link">导入导出</a></li><li><a href="/vuepress-typescript/project/namespace.html" class="sidebar-link">命名空间</a></li><li><a href="/vuepress-typescript/project/declaration-merging.html" class="sidebar-link">声明合并</a></li><li><a href="/vuepress-typescript/project/identify-the-class-library.html" class="sidebar-link">识别库的类型</a></li><li><a href="/vuepress-typescript/project/declaration-syntax.html" class="sidebar-link">声明语法</a></li><li><a href="/vuepress-typescript/project/declaration-files.html" class="sidebar-link">声明文件</a></li><li><a href="/vuepress-typescript/project/compile-tools.html" class="sidebar-link">编译工具</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>配置篇</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-typescript/configuration/file-options.html" class="sidebar-link">文件选项</a></li><li><a href="/vuepress-typescript/configuration/compiler-options.html" class="sidebar-link">编译选项</a></li><li><a href="/vuepress-typescript/configuration/vscode-compiler.html" class="sidebar-link">解决 vscode 异常提示问题</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>实战篇</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-typescript/actual/typescript-react.html" class="sidebar-link">typescript &amp; react 手动搭建</a></li><li><a href="/vuepress-typescript/actual/react-component-type.html" class="sidebar-link">React 组件与类型</a></li><li><a href="/vuepress-typescript/actual/typescript-vue.html" class="sidebar-link">typescript &amp; vue 手动搭建</a></li><li><a href="/vuepress-typescript/actual/vue-component-type.html" aria-current="page" class="active sidebar-link">Vue 组件与类型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-typescript/actual/vue-component-type.html#介绍" class="sidebar-link">介绍</a></li><li class="sidebar-sub-header"><a href="/vuepress-typescript/actual/vue-component-type.html#链接" class="sidebar-link">链接</a></li><li class="sidebar-sub-header"><a href="/vuepress-typescript/actual/vue-component-type.html#安装" class="sidebar-link">安装</a></li><li class="sidebar-sub-header"><a href="/vuepress-typescript/actual/vue-component-type.html#component" class="sidebar-link">@Component</a></li><li class="sidebar-sub-header"><a href="/vuepress-typescript/actual/vue-component-type.html#mixins" class="sidebar-link">Mixins</a></li><li class="sidebar-sub-header"><a href="/vuepress-typescript/actual/vue-component-type.html#prop-propsync" class="sidebar-link">@Prop &amp; @PropSync</a></li><li class="sidebar-sub-header"><a href="/vuepress-typescript/actual/vue-component-type.html#model" class="sidebar-link">@Model</a></li><li class="sidebar-sub-header"><a href="/vuepress-typescript/actual/vue-component-type.html#watch" class="sidebar-link">@Watch</a></li><li class="sidebar-sub-header"><a href="/vuepress-typescript/actual/vue-component-type.html#provide-inject" class="sidebar-link">@Provide &amp; @Inject</a></li><li class="sidebar-sub-header"><a href="/vuepress-typescript/actual/vue-component-type.html#emit" class="sidebar-link">@Emit</a></li><li class="sidebar-sub-header"><a href="/vuepress-typescript/actual/vue-component-type.html#ref" class="sidebar-link">@Ref</a></li></ul></li><li><a href="/vuepress-typescript/actual/typescript-eslint.html" class="sidebar-link">typescript &amp; eslint</a></li><li><a href="/vuepress-typescript/actual/typescript-jest.html" class="sidebar-link">typescript &amp; jest</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue-组件与类型"><a href="#vue-组件与类型" class="header-anchor">#</a> Vue 组件与类型</h1> <h2 id="介绍"><a href="#介绍" class="header-anchor">#</a> 介绍</h2> <p>在 Vue2.x 中使用 Typescript 开发中，我们通常会使用两种依赖库 <code>vue-class-component</code> 和 <code>vue-property-decorator</code> 二选一.</p> <p><a href="https://github.com/vuejs/vue-class-componen" target="_blank" rel="noopener noreferrer">vue-class-component<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 可以在 Vue 组件中使用类修饰器。</p> <p><a href="https://github.com/kaorun343/vue-property-decorator" target="_blank" rel="noopener noreferrer">vue-property-decorator<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 该库完全依赖于 <code>vue-class-component</code>，在该库的基础上拓展了如 @Prop、@Inject、@Emit 等操作符。</p> <p>虽然 <code>vue-property-decorator</code> 库依赖于 <code>vue-class-component</code> 库，但在使用 <code>vue-property-decorator</code> 库时，不需要安装 <code>vue-class-component</code>.</p> <p>本文主要介绍 <code>vue-property-decorator</code> 库的常用 api.</p> <h2 id="链接"><a href="#链接" class="header-anchor">#</a> 链接</h2> <p><a href="https://github.com/dengwb1991/typescript-in-action/tree/master/vue-actions/ts-vue-component" target="_blank" rel="noopener noreferrer">源码地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h2> <p>安装 <code>vue-property-decorator</code> 库</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">yarn</span> <span class="token function">add</span> -D vue-property-decorator
+</code></pre></div><p>在 <code>tsconfig.json</code> 中将 <code>experimentalDecorators</code> 设置为 <strong>true</strong>. 否则编译器不识别装饰器.</p> <p>该库提供装饰器有: @Component、@Model、@Watch、@Provide、@Inject、@Emit、@Ref.</p> <h2 id="component"><a href="#component" class="header-anchor">#</a> @Component</h2> <p>声明组件装饰器. <code>vue-property-decorator</code> 库中的 @Component 修饰器，使用的 <code>vue-class-component</code> 库中的 @Component.</p> <h3 id="js-与-ts-对比"><a href="#js-与-ts-对比" class="header-anchor">#</a> JS 与 TS 对比</h3> <p><strong>JS中：</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// hello.vue</span>
+<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>Hello <span class="token punctuation">{</span><span class="token punctuation">{</span> name <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      name<span class="token operator">:</span> <span class="token string">'Typescript'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// index.vue</span>
+<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>Hello<span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token keyword">import</span> Hello <span class="token keyword">from</span> <span class="token string">'./hello.vue'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  components<span class="token operator">:</span> <span class="token punctuation">{</span>
+    Hello
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre></div><p><strong>TS中：</strong></p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// hello.vue</span>
+<span class="token operator">&lt;</span>script lang<span class="token operator">=</span><span class="token string">&quot;ts&quot;</span><span class="token operator">&gt;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Vue <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-property-decorator'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Hello</span> <span class="token keyword">extends</span> <span class="token class-name">Vue</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> name<span class="token operator">:</span><span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">'Typescript'</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre></div><div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// index.vue</span>
+<span class="token operator">&lt;</span>script lang<span class="token operator">=</span><span class="token string">&quot;ts&quot;</span><span class="token operator">&gt;</span>
+<span class="token keyword">import</span> Hello <span class="token keyword">from</span> <span class="token string">'./hello.vue'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Vue<span class="token punctuation">,</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-property-decorator'</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>components<span class="token operator">:</span> <span class="token punctuation">{</span> Hello <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">componentExample</span> <span class="token keyword">extends</span> <span class="token class-name">Vue</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre></div><p>在使用该库时，组件导出为一个 Class 类，在类中可以写 created、mounted 函数，声明变量.</p> <p>@Component 修饰器中可以声明 <code>components</code>、<code>computed</code>、<code>created</code>、<code>mounted</code> 等函数.</p> <p>若想在 Class 类中写计算属性如下：</p> <div class="language-ts extra-class"><pre class="language-ts"><code>@Component
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Hello</span> <span class="token keyword">extends</span> <span class="token class-name">AppProps</span> <span class="token punctuation">{</span>
+  <span class="token comment">// initial data</span>
+  msg<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">123</span>
+
+  <span class="token comment">// computed</span>
+  <span class="token keyword">get</span> <span class="token function">computedMsg</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">'computed '</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>msg
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>每一个 <code>class</code> 上必须写 <code>@Component</code></p> <h2 id="mixins"><a href="#mixins" class="header-anchor">#</a> Mixins</h2> <p>辅助函数装饰器，同 @Component 一致，使用 <code>vue-class-component</code> 库中的 mixins.</p> <p>定义一个 mixin.ts</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Vue<span class="token punctuation">,</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-property-decorator'</span>
+@Component
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">MyMixins</span> <span class="token keyword">extends</span> <span class="token class-name">Vue</span> <span class="token punctuation">{</span>
+  mixinValue<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">'I am mixins'</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>使用：</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> Mixins <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-property-decorator'</span>
+<span class="token keyword">import</span> MyMixin <span class="token keyword">from</span> <span class="token string">'./mixin'</span>
+
+@Component
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Index</span> <span class="token keyword">extends</span> <span class="token class-name">Mixins</span><span class="token punctuation">(</span>MyMixin<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">created</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>mixinValue<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="prop-propsync"><a href="#prop-propsync" class="header-anchor">#</a> @Prop &amp; @PropSync</h2> <p>父子组件通讯装饰器.</p> <h3 id="prop"><a href="#prop" class="header-anchor">#</a> @Prop</h3> <p>用法 @Prop(options: (PropOptions | Constructor[] | Constructor) = {}) decorator.</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">PropsHello</span> <span class="token keyword">extends</span> <span class="token class-name">Vue</span> <span class="token punctuation">{</span>
+  @<span class="token function">Prop</span><span class="token punctuation">(</span>Number<span class="token punctuation">)</span>
+  <span class="token keyword">readonly</span> propA<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">|</span> <span class="token keyword">undefined</span>
+
+  @<span class="token function">Prop</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token keyword">type</span><span class="token operator">:</span> String<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">'default value'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">readonly</span> propB<span class="token operator">!</span><span class="token operator">:</span> <span class="token builtin">string</span>
+
+  @<span class="token function">Prop</span><span class="token punctuation">(</span><span class="token punctuation">[</span>String<span class="token punctuation">,</span> Boolean<span class="token punctuation">]</span><span class="token punctuation">)</span>
+  propC<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">boolean</span> <span class="token operator">|</span> <span class="token keyword">undefined</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>@Prop 可以定义类型、类型数组 或 配置对象. 如果参数未设置默认值，需要定义 undefined.</p> <p>当为参数设置默认值时，如 <code>propB</code>. 未添加 ! 这个标志时，会爆出一下错误</p> <div class="language-bash extra-class"><pre class="language-bash"><code>TS2564: Property <span class="token string">'propB'</span> has no initializer and is not definitely assigned <span class="token keyword">in</span> the constructor.
+</code></pre></div><p>当添加了 ! 标志. 该参数会避开 Typescript 校验机制，如果定义了 Number 类型，其实你可以传入 string、boolean 类型. 或者不定义任何类型.</p> <h3 id="propsync"><a href="#propsync" class="header-anchor">#</a> @PropSync</h3> <p>用法 @Prop(propName: string, options: (PropOptions | Constructor[] | Constructor) = {}) decorator.</p> <p><strong>TS中：</strong></p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Vue<span class="token punctuation">,</span> Component<span class="token punctuation">,</span> PropSync <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-property-decorator'</span>
+
+@Component
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">YourComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Vue</span> <span class="token punctuation">{</span>
+  @<span class="token function">PropSync</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token keyword">type</span><span class="token operator">:</span> String <span class="token punctuation">}</span><span class="token punctuation">)</span> syncedName<span class="token operator">!</span><span class="token operator">:</span> <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>JS中：</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  props<span class="token operator">:</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> String
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+    syncedName<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token keyword">set</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'update:name'</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="model"><a href="#model" class="header-anchor">#</a> @Model</h2> <p>允许一个自定义组件在使用 v-model 时定制 prop 和 event。默认情况下，一个组件上的 v-model 会把 value 用作 prop 且把 input 用作 event，但是一些输入类型比如单选框和复选框按钮可能想使用 value prop 来达到不同的目的。使用 model 选项可以回避这些情况产生的冲突。</p> <p>用法：@Model(event?: string, options: (PropOptions | Constructor[] | Constructor) = {}) decorator</p> <p><strong>TS中：</strong></p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Vue<span class="token punctuation">,</span> Component<span class="token punctuation">,</span> Model <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-property-decorator'</span>
+
+@Component
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">YourComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Vue</span> <span class="token punctuation">{</span>
+  @<span class="token function">Model</span><span class="token punctuation">(</span><span class="token string">'change'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token keyword">type</span><span class="token operator">:</span> Boolean <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token keyword">readonly</span> checked<span class="token operator">!</span><span class="token operator">:</span> <span class="token builtin">boolean</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>JS中：</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  model<span class="token operator">:</span> <span class="token punctuation">{</span>
+    prop<span class="token operator">:</span> <span class="token string">'checked'</span><span class="token punctuation">,</span>
+    event<span class="token operator">:</span> <span class="token string">'change'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  props<span class="token operator">:</span> <span class="token punctuation">{</span>
+    checked<span class="token operator">:</span> <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> Boolean
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="watch"><a href="#watch" class="header-anchor">#</a> @Watch</h2> <p>用法：@Watch(path: string, options: WatchOptions = {}) decorator</p> <p><strong>TS中：</strong></p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Vue<span class="token punctuation">,</span> Component<span class="token punctuation">,</span> Watch <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-property-decorator'</span>
+
+@Component
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">YourComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Vue</span> <span class="token punctuation">{</span>
+  @<span class="token function">Watch</span><span class="token punctuation">(</span><span class="token string">'child'</span><span class="token punctuation">)</span>
+  <span class="token function">onChildChanged</span><span class="token punctuation">(</span><span class="token parameter">val<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> oldVal<span class="token operator">:</span> <span class="token builtin">string</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+  @<span class="token function">Watch</span><span class="token punctuation">(</span><span class="token string">'person'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> immediate<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> deep<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token function">onPersonChanged1</span><span class="token punctuation">(</span><span class="token parameter">val<span class="token operator">:</span> Person<span class="token punctuation">,</span> oldVal<span class="token operator">:</span> Person</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+  @<span class="token function">Watch</span><span class="token punctuation">(</span><span class="token string">'person'</span><span class="token punctuation">)</span>
+  <span class="token function">onPersonChanged2</span><span class="token punctuation">(</span><span class="token parameter">val<span class="token operator">:</span> Person<span class="token punctuation">,</span> oldVal<span class="token operator">:</span> Person</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>JS中：</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  watch<span class="token operator">:</span> <span class="token punctuation">{</span>
+    child<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        handler<span class="token operator">:</span> <span class="token string">'onChildChanged'</span><span class="token punctuation">,</span>
+        immediate<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        deep<span class="token operator">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    person<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        handler<span class="token operator">:</span> <span class="token string">'onPersonChanged1'</span><span class="token punctuation">,</span>
+        immediate<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        deep<span class="token operator">:</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        handler<span class="token operator">:</span> <span class="token string">'onPersonChanged2'</span><span class="token punctuation">,</span>
+        immediate<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        deep<span class="token operator">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">onChildChanged</span><span class="token punctuation">(</span><span class="token parameter">val<span class="token punctuation">,</span> oldVal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">onPersonChanged1</span><span class="token punctuation">(</span><span class="token parameter">val<span class="token punctuation">,</span> oldVal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">onPersonChanged2</span><span class="token punctuation">(</span><span class="token parameter">val<span class="token punctuation">,</span> oldVal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="provide-inject"><a href="#provide-inject" class="header-anchor">#</a> @Provide &amp; @Inject</h2> <p><code>provide</code> 和 <code>inject</code> 允许一个祖先组件向其所有子孙后代注入一个依赖，不论组件层次有多深，实现<strong>跨级访问顶层组件</strong>的数据.</p> <p>用法：@Provide(key?: string | symbol) / @Inject(options?: { from?: InjectKey, default?: any } | InjectKey) decorator</p> <p><strong>TS中：</strong></p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> Inject<span class="token punctuation">,</span> Provide<span class="token punctuation">,</span> Vue <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-property-decorator'</span>
+
+<span class="token keyword">const</span> <span class="token builtin">symbol</span> <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">'baz'</span><span class="token punctuation">)</span>
+
+@Component
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Vue</span> <span class="token punctuation">{</span>
+  @<span class="token function">Inject</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">readonly</span> foo<span class="token operator">!</span><span class="token operator">:</span> <span class="token builtin">string</span>
+  @<span class="token function">Inject</span><span class="token punctuation">(</span><span class="token string">'bar'</span><span class="token punctuation">)</span> <span class="token keyword">readonly</span> bar<span class="token operator">!</span><span class="token operator">:</span> <span class="token builtin">string</span>
+  @<span class="token function">Inject</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token keyword">from</span><span class="token operator">:</span> <span class="token string">'optional'</span><span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">'default'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token keyword">readonly</span> optional<span class="token operator">!</span><span class="token operator">:</span> <span class="token builtin">string</span>
+  @<span class="token function">Inject</span><span class="token punctuation">(</span><span class="token builtin">symbol</span><span class="token punctuation">)</span> <span class="token keyword">readonly</span> baz<span class="token operator">!</span><span class="token operator">:</span> <span class="token builtin">string</span>
+
+  @<span class="token function">Provide</span><span class="token punctuation">(</span><span class="token punctuation">)</span> foo <span class="token operator">=</span> <span class="token string">'foo'</span>
+  @<span class="token function">Provide</span><span class="token punctuation">(</span><span class="token string">'bar'</span><span class="token punctuation">)</span> baz <span class="token operator">=</span> <span class="token string">'bar'</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>JS中：</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> symbol <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">'baz'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> MyComponent <span class="token operator">=</span> Vue<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  inject<span class="token operator">:</span> <span class="token punctuation">{</span>
+    foo<span class="token operator">:</span> <span class="token string">'foo'</span><span class="token punctuation">,</span>
+    bar<span class="token operator">:</span> <span class="token string">'bar'</span><span class="token punctuation">,</span>
+    optional<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token keyword">from</span><span class="token operator">:</span> <span class="token string">'optional'</span><span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">'default'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span>symbol<span class="token punctuation">]</span><span class="token operator">:</span> symbol
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      foo<span class="token operator">:</span> <span class="token string">'foo'</span><span class="token punctuation">,</span>
+      baz<span class="token operator">:</span> <span class="token string">'bar'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">provide</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      foo<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>foo<span class="token punctuation">,</span>
+      bar<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>baz
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>如果希望顶层组件中提供的值被修改，子孙组件注入的值同样更改的话，使用 <code>ProvideReactive</code> 和 <code>ProvideReactive</code></p> <p>用法：@ProvideReactive(key?: string | symbol) / @InjectReactive(options?: { from?: InjectKey, default?: any } | InjectKey) decorator</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">const</span> key <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+@Component
+<span class="token keyword">class</span> <span class="token class-name">ParentComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Vue</span> <span class="token punctuation">{</span>
+  @<span class="token function">ProvideReactive</span><span class="token punctuation">(</span><span class="token punctuation">)</span> one <span class="token operator">=</span> <span class="token string">'value'</span>
+  @<span class="token function">ProvideReactive</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> two <span class="token operator">=</span> <span class="token string">'value'</span>
+<span class="token punctuation">}</span>
+
+@Component
+<span class="token keyword">class</span> <span class="token class-name">ChildComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Vue</span> <span class="token punctuation">{</span>
+  @<span class="token function">InjectReactive</span><span class="token punctuation">(</span><span class="token punctuation">)</span> one<span class="token operator">!</span><span class="token operator">:</span> <span class="token builtin">string</span>
+  @<span class="token function">InjectReactive</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> two<span class="token operator">!</span><span class="token operator">:</span> <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="emit"><a href="#emit" class="header-anchor">#</a> @Emit</h2> <p>用法：@Emit(event?: string) decorator</p> <p><strong>TS中：</strong></p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Vue<span class="token punctuation">,</span> Component<span class="token punctuation">,</span> Emit <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-property-decorator'</span>
+
+@Component
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">YourComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Vue</span> <span class="token punctuation">{</span>
+  count <span class="token operator">=</span> <span class="token number">0</span>
+
+  @<span class="token function">Emit</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token function">addToCount</span><span class="token punctuation">(</span><span class="token parameter">n<span class="token operator">:</span> <span class="token builtin">number</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">+=</span> n
+  <span class="token punctuation">}</span>
+
+  @<span class="token function">Emit</span><span class="token punctuation">(</span><span class="token string">'reset'</span><span class="token punctuation">)</span>
+  <span class="token function">resetCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>
+
+  @<span class="token function">Emit</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token function">returnValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">10</span>
+  <span class="token punctuation">}</span>
+
+  @<span class="token function">Emit</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token function">onInputChange</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value
+  <span class="token punctuation">}</span>
+
+  @<span class="token function">Emit</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token function">promise</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>JS中：</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      count<span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">addToCount</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">+=</span> n
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'add-to-count'</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">resetCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token number">0</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'reset'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">returnValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'return-value'</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">onInputChange</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'on-input-change'</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">,</span> e<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">promise</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> promise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+      promise<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">value</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'promise'</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="ref"><a href="#ref" class="header-anchor">#</a> @Ref</h2> <p>用法：@Ref(refKey?: string) decorator</p> <p><strong>TS中：</strong></p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Vue<span class="token punctuation">,</span> Component<span class="token punctuation">,</span> Ref <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-property-decorator'</span>
+
+<span class="token keyword">import</span> AnotherComponent <span class="token keyword">from</span> <span class="token string">'@/path/to/another-component.vue'</span>
+
+@Component
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">YourComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Vue</span> <span class="token punctuation">{</span>
+  @<span class="token function">Ref</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">readonly</span> anotherComponent<span class="token operator">!</span><span class="token operator">:</span> AnotherComponent
+  @<span class="token function">Ref</span><span class="token punctuation">(</span><span class="token string">'aButton'</span><span class="token punctuation">)</span> <span class="token keyword">readonly</span> button<span class="token operator">!</span><span class="token operator">:</span> HTMLButtonElement
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>JS中：</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    anotherComponent<span class="token operator">:</span> <span class="token punctuation">{</span>
+      cache<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>anotherComponent <span class="token keyword">as</span> AnotherComponent
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    button<span class="token operator">:</span> <span class="token punctuation">{</span>
+      cache<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>aButton <span class="token keyword">as</span> HTMLButtonElement
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2/1/2020, 9:47:40 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vuepress-typescript/actual/typescript-vue.html" class="prev">
+        typescript &amp; vue 手动搭建
+      </a></span> <span class="next"><a href="/vuepress-typescript/actual/typescript-eslint.html">
+        typescript &amp; eslint
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/vuepress-typescript/assets/js/app.bde0b7fd.js" defer></script><script src="/vuepress-typescript/assets/js/2.3f0df748.js" defer></script><script src="/vuepress-typescript/assets/js/11.a858ddc1.js" defer></script>
+  </body>
+</html>

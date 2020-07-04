@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>类与接口 | TypeScript开发教程</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/vuepress-typescript/images/typescript.png">
+    <meta name="description" content="目录">
+    <link rel="preload" href="/vuepress-typescript/assets/css/0.styles.6153b166.css" as="style"><link rel="preload" href="/vuepress-typescript/assets/js/app.bde0b7fd.js" as="script"><link rel="preload" href="/vuepress-typescript/assets/js/2.3f0df748.js" as="script"><link rel="preload" href="/vuepress-typescript/assets/js/14.3bd84577.js" as="script"><link rel="prefetch" href="/vuepress-typescript/assets/js/10.ca189957.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/11.a858ddc1.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/12.513071a6.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/13.b51a5d66.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/15.8b49ae34.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/16.c22832b8.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/17.3b456e5a.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/18.e670256e.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/19.2ca36dd0.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/20.82313649.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/21.558f10fa.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/22.0d2991a3.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/23.8a3267bb.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/24.44f8dc66.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/25.6f29ca8d.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/26.6206be3f.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/27.b14c1db8.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/28.d66aba6c.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/29.d8eeb7ee.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/3.9e4a2525.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/30.0a6a0f62.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/31.cf8eda74.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/32.f732ab6b.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/4.2e2c3fe2.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/5.8abf2eed.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/6.d4271ad8.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/7.884b888d.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/8.4f4d6c1f.js"><link rel="prefetch" href="/vuepress-typescript/assets/js/9.a7329968.js">
+    <link rel="stylesheet" href="/vuepress-typescript/assets/css/0.styles.6153b166.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-typescript/" class="home-link router-link-active"><!----> <span class="site-name">TypeScript开发教程</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://github.com/tiandashu/vuepress-typeScript.git" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://github.com/tiandashu/vuepress-typeScript.git" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>初识篇</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-typescript/introduce/what-is-typescript.html" class="sidebar-link">什么是 TypeScript</a></li><li><a href="/vuepress-typescript/introduce/install-typescript.html" class="sidebar-link">安装 TypeScript</a></li><li><a href="/vuepress-typescript/introduce/hello-typescript.html" class="sidebar-link">Hello TypeScript</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>基础篇</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-typescript/basics/basis-data-types.html" class="sidebar-link">基础类型</a></li><li><a href="/vuepress-typescript/basics/interface.html" class="sidebar-link">接口</a></li><li><a href="/vuepress-typescript/basics/function.html" class="sidebar-link">函数</a></li><li><a href="/vuepress-typescript/basics/class.html" class="sidebar-link">类</a></li><li><a href="/vuepress-typescript/basics/class-and-interface.html" aria-current="page" class="active sidebar-link">类与接口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-typescript/basics/class-and-interface.html#类实现接口" class="sidebar-link">类实现接口</a></li><li class="sidebar-sub-header"><a href="/vuepress-typescript/basics/class-and-interface.html#接口继承接口" class="sidebar-link">接口继承接口</a></li><li class="sidebar-sub-header"><a href="/vuepress-typescript/basics/class-and-interface.html#接口继承类" class="sidebar-link">接口继承类</a></li><li class="sidebar-sub-header"><a href="/vuepress-typescript/basics/class-and-interface.html#混合类型" class="sidebar-link">混合类型</a></li><li class="sidebar-sub-header"><a href="/vuepress-typescript/basics/class-and-interface.html#小结" class="sidebar-link">小结</a></li></ul></li><li><a href="/vuepress-typescript/basics/generics.html" class="sidebar-link">泛型</a></li><li><a href="/vuepress-typescript/basics/type-check-mechanism.html" class="sidebar-link">类型检查机制</a></li><li><a href="/vuepress-typescript/basics/advanced-type.html" class="sidebar-link">高级类型</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>工程篇</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-typescript/project/import-export.html" class="sidebar-link">导入导出</a></li><li><a href="/vuepress-typescript/project/namespace.html" class="sidebar-link">命名空间</a></li><li><a href="/vuepress-typescript/project/declaration-merging.html" class="sidebar-link">声明合并</a></li><li><a href="/vuepress-typescript/project/identify-the-class-library.html" class="sidebar-link">识别库的类型</a></li><li><a href="/vuepress-typescript/project/declaration-syntax.html" class="sidebar-link">声明语法</a></li><li><a href="/vuepress-typescript/project/declaration-files.html" class="sidebar-link">声明文件</a></li><li><a href="/vuepress-typescript/project/compile-tools.html" class="sidebar-link">编译工具</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>配置篇</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-typescript/configuration/file-options.html" class="sidebar-link">文件选项</a></li><li><a href="/vuepress-typescript/configuration/compiler-options.html" class="sidebar-link">编译选项</a></li><li><a href="/vuepress-typescript/configuration/vscode-compiler.html" class="sidebar-link">解决 vscode 异常提示问题</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>实战篇</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-typescript/actual/typescript-react.html" class="sidebar-link">typescript &amp; react 手动搭建</a></li><li><a href="/vuepress-typescript/actual/react-component-type.html" class="sidebar-link">React 组件与类型</a></li><li><a href="/vuepress-typescript/actual/typescript-vue.html" class="sidebar-link">typescript &amp; vue 手动搭建</a></li><li><a href="/vuepress-typescript/actual/vue-component-type.html" class="sidebar-link">Vue 组件与类型</a></li><li><a href="/vuepress-typescript/actual/typescript-eslint.html" class="sidebar-link">typescript &amp; eslint</a></li><li><a href="/vuepress-typescript/actual/typescript-jest.html" class="sidebar-link">typescript &amp; jest</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="类与接口"><a href="#类与接口" class="header-anchor">#</a> 类与接口</h1> <p>本篇主要介绍类与接口之间实现、相互继承的操作。</p> <h2 id="类实现接口"><a href="#类实现接口" class="header-anchor">#</a> 类实现接口</h2> <p>实现（implements）是面向对象中的一个重要概念。一般来讲，一个类只能继承自另一个类，有时候不同类之间可以有一些共有的特性，这时候就可以把特性提取成接口（interface），用 <code>implements</code> 关键字来实现。这个特性大大提高了面向对象的灵活性。</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">interface</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token function">eat</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">implements</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+  <span class="token keyword">constructor</span> <span class="token punctuation">(</span><span class="token parameter">name<span class="token operator">:</span> <span class="token builtin">string</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+  <span class="token punctuation">}</span>
+  name<span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token function">eat</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>类实现接口时，<strong>必须</strong>声明接口中所有定义的属性和方法。</p></div> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">interface</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token function">eat</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">implements</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+  <span class="token keyword">constructor</span> <span class="token punctuation">(</span><span class="token parameter">name<span class="token operator">:</span> <span class="token builtin">string</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+  <span class="token punctuation">}</span>
+  name<span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token comment">// eat () {}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Error: Class 'Cat' incorrectly implements interface 'Animal'. Property 'eat' is missing in type 'Cat' but required in type 'Animal'.</span>
+</code></pre></div><div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>类实现接口时，声明接口中定义的属性和方法不能修饰为 <code>private</code> 或 <code>protected</code>。</p></div> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">interface</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token function">eat</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">implements</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+  <span class="token keyword">constructor</span> <span class="token punctuation">(</span><span class="token parameter">name<span class="token operator">:</span> <span class="token builtin">string</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+  <span class="token punctuation">}</span>
+  <span class="token keyword">private</span> name<span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token function">eat</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Error: Class 'Cat' incorrectly implements interface 'Animal'. Property 'name' is private in type 'Cat' but not in type 'Animal'.</span>
+</code></pre></div><div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>接口不能约束类中的构造函数</p></div> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">interface</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+  <span class="token keyword">new</span> <span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
+  name<span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token function">eat</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">implements</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+  <span class="token keyword">constructor</span> <span class="token punctuation">(</span><span class="token parameter">name<span class="token operator">:</span> <span class="token builtin">string</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+  <span class="token punctuation">}</span>
+  name<span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token function">eat</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Error: Class 'Cat' incorrectly implements interface 'Animal'. Type 'Cat' provides no match for the signature 'new (name: string): void'.</span>
+</code></pre></div><h2 id="接口继承接口"><a href="#接口继承接口" class="header-anchor">#</a> 接口继承接口</h2> <p>实现方法如下：</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">interface</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token function">eat</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Predators</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+  <span class="token function">run</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">implements</span> <span class="token class-name">Predators</span> <span class="token punctuation">{</span>
+  <span class="token keyword">constructor</span> <span class="token punctuation">(</span><span class="token parameter">name<span class="token operator">:</span> <span class="token builtin">string</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+  <span class="token punctuation">}</span>
+  name<span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token function">eat</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token function">run</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>继承多个接口用 <code>,</code> 分割，同理实现多个接口方式相同。</p></div> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">interface</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token function">eat</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+  
+<span class="token keyword">interface</span> <span class="token class-name">Lovely</span> <span class="token punctuation">{</span>
+  cute<span class="token operator">:</span> <span class="token builtin">number</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Predators</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token punctuation">,</span> Lovely <span class="token punctuation">{</span>
+  <span class="token function">run</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">implements</span> <span class="token class-name">Predators</span> <span class="token punctuation">{</span>
+  <span class="token keyword">constructor</span> <span class="token punctuation">(</span><span class="token parameter">name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> cute<span class="token operator">:</span> <span class="token builtin">number</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token keyword">this</span><span class="token punctuation">.</span>cute <span class="token operator">=</span> cute
+  <span class="token punctuation">}</span>
+  name<span class="token operator">:</span> <span class="token builtin">string</span>
+  cute<span class="token operator">:</span> <span class="token builtin">number</span>
+  <span class="token function">eat</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token function">run</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="接口继承类"><a href="#接口继承类" class="header-anchor">#</a> 接口继承类</h2> <p>实现方法如下：</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">class</span> <span class="token class-name">Auto</span> <span class="token punctuation">{</span>
+  <span class="token keyword">constructor</span> <span class="token punctuation">(</span><span class="token parameter">state<span class="token operator">:</span> <span class="token builtin">string</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> state
+  <span class="token punctuation">}</span>
+  state<span class="token operator">:</span> <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">AutoInterface</span> <span class="token keyword">extends</span> <span class="token class-name">Auto</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">C</span> <span class="token keyword">implements</span> <span class="token class-name">AutoInterface</span> <span class="token punctuation">{</span>
+  state <span class="token operator">=</span> <span class="token string">''</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="混合类型"><a href="#混合类型" class="header-anchor">#</a> 混合类型</h2> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">interface</span> <span class="token class-name">SearchFunc</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">(</span>source<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> subString<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span>
+<span class="token punctuation">}</span>
+​
+<span class="token keyword">let</span> mySearch<span class="token operator">:</span> SearchFunc
+<span class="token function-variable function">mySearch</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">source<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> subString<span class="token operator">:</span> <span class="token builtin">string</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> source<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span>subString<span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>一个函数还可以有自己的属性和方法</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">interface</span> <span class="token class-name">Counter</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">(</span>start<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span>
+  interval<span class="token operator">:</span> <span class="token builtin">number</span>
+  <span class="token function">reset</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+​
+<span class="token keyword">function</span> <span class="token function">getCounter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Counter <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> counter <span class="token operator">=</span> <span class="token operator">&lt;</span>Counter<span class="token operator">&gt;</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">start<span class="token operator">:</span> <span class="token builtin">number</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  counter<span class="token punctuation">.</span>interval <span class="token operator">=</span> <span class="token number">123</span>
+  counter<span class="token punctuation">.</span><span class="token function-variable function">reset</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token keyword">return</span> counter
+<span class="token punctuation">}</span>
+​
+<span class="token keyword">let</span> c <span class="token operator">=</span> <span class="token function">getCounter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">c</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+c<span class="token punctuation">.</span><span class="token function">reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+c<span class="token punctuation">.</span>interval <span class="token operator">=</span> <span class="token number">5.0</span>
+</code></pre></div><h2 id="小结"><a href="#小结" class="header-anchor">#</a> 小结</h2> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <ol><li>接口与接口、类与类之间可以相互继承（extends）</li> <li>接口可以通过类来实现的（implements），接口只能约束类的公有成员</li> <li>接口可以抽离出类的成员、包括公有（public）、私有（private）、受保护（protected）成员</li></ol></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">10/16/2019, 11:07:56 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vuepress-typescript/basics/class.html" class="prev">
+        类
+      </a></span> <span class="next"><a href="/vuepress-typescript/basics/generics.html">
+        泛型
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/vuepress-typescript/assets/js/app.bde0b7fd.js" defer></script><script src="/vuepress-typescript/assets/js/2.3f0df748.js" defer></script><script src="/vuepress-typescript/assets/js/14.3bd84577.js" defer></script>
+  </body>
+</html>
