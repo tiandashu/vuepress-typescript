@@ -9,7 +9,7 @@
 module.exports = {
   port: 8083,
   title: 'TypeScript开发教程',
-  base: '/vuepress-typeScript/', // 注意此处要和git 仓库名一致，否则会样式路径错误
+  base: '/vuepress-typescript/', // 注意此处要和git 仓库名一致，否则会样式路径错误
   description: '目录',
   head: [
     ['link', { rel: 'icon', href: '/images/typescript.png' }]

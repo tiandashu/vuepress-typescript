@@ -15,8 +15,8 @@ git add -A
 git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f "git@github.com:tiandashu/vuepress-typeScript.git" master:gh-pages
+git push -f "git@github.com:tiandashu/vuepress-typescript.git" master:gh-pages
 
-echo '发布完成，请访问http://tl.tianaitian.com/vuepress-typeScript/'
+echo '发布完成，请访问http://doc.tianaitian.com/vuepress-typescript/'
 
 cd -
